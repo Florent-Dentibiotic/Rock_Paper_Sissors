@@ -1,4 +1,4 @@
-.weapon-position {
+.absolute {
   position: absolute;
   right: 50%;
   top: 30%;
@@ -52,4 +52,8 @@
 
 .weapon-kind {
   width: 5em;
+}
+
+.weapon-selected {
+  transform: scale(150%);
 }

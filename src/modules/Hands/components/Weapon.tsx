@@ -8,12 +8,13 @@ interface WeaponProps {
     border: string
     placeContent: string
   }
+  position: string
   handleClick: (e: handleClickProps) => void
 }
 
-export default function Weapon({ weapon, handleClick }: WeaponProps) {
+export default function Weapon({ weapon, position, handleClick }: WeaponProps) {
   return (
-    <div className="weapon-position">
+    <div className={` ${position}`}>
       <div
         className={`${weapon.border} ${weapon.placeContent} weapon`}
         onClick={() => handleClick(weapon)}

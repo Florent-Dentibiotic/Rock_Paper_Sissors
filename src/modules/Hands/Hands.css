@@ -4,7 +4,6 @@
   min-height: 30em;
   margin: 2em auto;
   position: relative;
-  gap: 10px;
 }
 
 .triangle {
@@ -12,4 +11,44 @@
   right: 50%;
   top: 30%;
   transform: translateX(55%) scale(130%);
+}
+
+.hands-selected {
+  padding: 2em;
+  min-height: 30em;
+  margin: 2em auto;
+  position: relative;
+  display: grid;
+}
+
+.onload {
+  max-width: 800px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.results {
+  max-width: 1366px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.hands-selected-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+}
+
+.hands-selected-title {
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  grid-column: 1 / 2;
+  letter-spacing: 0.2em;
+}
+
+.house-unselected {
+  width: 16em;
+  height: 16em;
+  background-color: hsl(237, 49%, 15%);
+  border-radius: 100%;
 }

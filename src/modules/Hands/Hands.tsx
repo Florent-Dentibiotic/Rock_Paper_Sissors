@@ -4,7 +4,8 @@ import Rock from '../../assets/images/icon-rock.svg'
 import Paper from '../../assets/images/icon-paper.svg'
 import Scissors from '../../assets/images/icon-scissors.svg'
 import Triangle from '../../assets/images/bg-triangle.svg'
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
+import { getRandomInt } from '../../utils/random'
 
 export type handleClickProps = {
   name: string
@@ -13,7 +14,11 @@ export type handleClickProps = {
   placeContent: string
 }
 
-const weapons = {
+interface weaponsProps {
+  [key: string]: handleClickProps
+}
+
+const weapons: weaponsProps = {
   Paper: {
     name: 'paper',
     img: Paper,
@@ -35,34 +40,89 @@ const weapons = {
 }
 
 export default function Hands() {
-  const [playerChoice, setPlayerChoice] = useState(null)
+  const [playerChoice, setPlayerChoice]: [
+    object,
+    Dispatch<SetStateAction<handleClickProps>>
+  ] = useState({})
+  const [houseChoice, setHouseChoice]: [
+    object,
+    Dispatch<SetStateAction<handleClickProps>>
+  ] = useState({})
+  const [score, setScore] = useState(false)
+
+  const handleHouseChoice = () => {
+    const house = weapons[Object.keys(weapons)[getRandomInt()]]
+    console.log(house)
+    setHouseChoice({
+      name: house.name,
+      img: house.img,
+      placeContent: 'middle',
+      border: house.border,
+    })
+    setTimeout(() => setScore(true), 1000)
+  }
 
   const handlePlayerChoice = (e: handleClickProps) => {
     console.log(e)
-    const choice = {
+    setPlayerChoice({
       name: e.name,
       img: e.img,
       placeContent: 'middle',
       border: e.border,
-    }
-    setPlayerChoice(choice)
-    setTimeout(() => setPlayerChoice(null), 1000)
+    })
+    setTimeout(() => handleHouseChoice(), 1000)
   }
 
-  if (playerChoice) {
+  if (playerChoice.name) {
     return (
-      <main className="hands">
-        <h3>YOU CHOOSE</h3>
-        <Weapon weapon={playerChoice} handleClick={handlePlayerChoice} />
+      <main className={`hands-selected ${!score ? 'onload' : 'results'}`}>
+        <article className="hands-selected-article">
+          <h3 className="hands-selected-title">YOU PICKED</h3>
+          <Weapon
+            weapon={playerChoice}
+            position={'weapon-selected'}
+            handleClick={handlePlayerChoice}
+          />
+        </article>
+        {score ? (
+          <article className="hands-selected-article">
+            <h1>You win</h1>
+            <button>PLAY AGAIN</button>
+          </article>
+        ) : null}
+        <article className="hands-selected-article">
+          <h3 className="hands-selected-title">THE HOUSE PICKED</h3>
+          {houseChoice.name ? (
+            <Weapon
+              weapon={houseChoice}
+              position={'weapon-selected'}
+              handleClick={handlePlayerChoice}
+            />
+          ) : (
+            <div className="house-unselected"></div>
+          )}
+        </article>
       </main>
     )
   }
   return (
     <main className="hands">
       <img src={Triangle} alt="" className="triangle" />
-      <Weapon weapon={weapons.Paper} handleClick={handlePlayerChoice} />
-      <Weapon weapon={weapons.Scissors} handleClick={handlePlayerChoice} />
-      <Weapon weapon={weapons.Rock} handleClick={handlePlayerChoice} />
+      <Weapon
+        weapon={weapons.Paper}
+        position={'absolute'}
+        handleClick={handlePlayerChoice}
+      />
+      <Weapon
+        weapon={weapons.Scissors}
+        position={'absolute'}
+        handleClick={handlePlayerChoice}
+      />
+      <Weapon
+        weapon={weapons.Rock}
+        position={'absolute'}
+        handleClick={handlePlayerChoice}
+      />
     </main>
   )
 }

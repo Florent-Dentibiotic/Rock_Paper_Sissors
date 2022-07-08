@@ -1,9 +1,34 @@
+import { useState } from 'react'
+import Modal from '../Modal/Modal'
 import './Rules.css'
+import normalRules from '../../assets/images/image-rules.svg'
+import bonusRules from '../../assets/images/image-rules-bonus.svg'
 
-export default function Rules() {
+interface RulesProps {
+  game: string
+  setGame: () => void
+}
+
+export default function Rules({ game, setGame }: RulesProps) {
+  const [showModal, setShowModal] = useState(false)
+  const handleShowModal = () => {
+    setShowModal(true)
+  }
+
   return (
     <footer className="footer">
-      <button className="footer-button">RULES</button>
+      <button onClick={setGame} className="footer-button">
+        {game === 'normal' ? 'BONUS' : 'NORMAL'}
+      </button>
+      {showModal ? (
+        <Modal
+          rules={game === 'normal' ? normalRules : bonusRules}
+          closeModal={() => setShowModal(false)}
+        />
+      ) : null}
+      <button onClick={handleShowModal} className="footer-button">
+        RULES
+      </button>
     </footer>
   )
 }

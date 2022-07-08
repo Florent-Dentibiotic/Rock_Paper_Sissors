@@ -38,6 +38,21 @@
   box-shadow: 0 0.5em hsl(39, 89%, 49%), inset 0 0.4em hsl(217, 16%, 80%);
 }
 
+.purple {
+  border-color: hsl(261, 72%, 63%);
+  box-shadow: 0 0.5em hsl(261, 73%, 60%), inset 0 0.4em hsl(217, 16%, 80%);
+}
+
+.cyan {
+  border-color: hsl(189, 58%, 57%);
+  box-shadow: 0 0.5em hsl(189, 59%, 53%), inset 0 0.4em hsl(217, 16%, 80%);
+}
+
+/*
+hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
+- Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)*/
+
+/* NORMAL POSITION RULES */
 .right {
   transform: translateX(170px) translateY(-140px);
 }
@@ -47,7 +62,7 @@
 }
 
 .center {
-  transform: rotate(0deg) translateY(140px);
+  transform: translateY(140px);
 }
 
 .weapon-kind {
@@ -56,4 +71,26 @@
 
 .weapon-selected {
   transform: scale(150%);
+}
+
+/* BONUS POSITION RULES */
+
+.top {
+  transform: translateY(-160px);
+}
+
+.top-left {
+  transform: translateX(-230px) translateY(-10px);
+}
+
+.top-right {
+  transform: translateX(230px) translateY(-10px);
+}
+
+.bottom-left {
+  transform: translateX(-150px) translateY(250px);
+}
+
+.bottom-right {
+  transform: translateX(150px) translateY(250px);
 }

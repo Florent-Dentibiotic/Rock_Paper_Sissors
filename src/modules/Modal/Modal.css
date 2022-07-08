@@ -1,0 +1,38 @@
+.modal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  min-height: 150vh;
+  width: 100vw;
+  background-color: rgba(117, 190, 218, 0.5);
+  display: grid;
+  place-content: center;
+}
+
+.modal-rules-bg {
+  background-color: white;
+  padding: 1.7em 3em;
+  width: min-content;
+  height: min-content;
+  border-radius: 0.5em;
+}
+
+.modal-rules-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.modal-rules-title {
+  margin: 0;
+  font-size: 2em;
+}
+
+.modal-rules-close {
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+}

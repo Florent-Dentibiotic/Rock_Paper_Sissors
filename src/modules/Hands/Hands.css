@@ -27,7 +27,7 @@
 }
 
 .results {
-  max-width: 1366px;
+  max-width: 1000px;
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -51,4 +51,34 @@
   height: 16em;
   background-color: hsl(237, 49%, 15%);
   border-radius: 100%;
+}
+
+.hands-selected-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5em;
+}
+
+.hands-selected-score-title {
+  font-size: 3.8em;
+  text-align: center;
+  color: white;
+  grid-column: 1 / 2;
+  margin-bottom: 0.3em;
+}
+
+.hands-selected-score-button {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 20px;
+  border: none;
+  border-radius: 0.6rem;
+  background-color: white;
+  padding: 0.5em 2em;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.hands-selected-score-button:hover {
+  transform: scale(105%);
 }

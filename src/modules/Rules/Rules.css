@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-button {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 20px;
+  border: solid 2px hsl(217, 16%, 45%);
+  border-radius: 0.6rem;
+  background-color: transparent;
+  padding: 0.5em 2em;
+  color: white;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.footer-button:hover {
+  background-color: hsl(217, 16%, 45%);
+  color: black;
+}

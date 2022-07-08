@@ -1,0 +1,55 @@
+.weapon-position {
+  position: absolute;
+  right: 50%;
+  top: 30%;
+  transform: translateX(8em);
+}
+
+.weapon {
+  border: solid 1em;
+  padding: 2em;
+  background-color: aliceblue;
+  border-radius: 100%;
+  width: 8em;
+  height: 8em;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.weapon:hover {
+  opacity: 95%;
+  width: 8.2em;
+  height: 8.2em;
+}
+
+.red {
+  border-color: hsl(349, 70%, 56%);
+  box-shadow: 0 0.5em hsl(349, 71%, 52%), inset 0 0.4em hsl(217, 16%, 80%);
+}
+
+.blue {
+  border-color: hsl(230, 89%, 65%);
+  box-shadow: 0 0.5em hsl(230, 89%, 62%), inset 0 0.4em hsl(217, 16%, 80%);
+}
+
+.yellow {
+  border-color: hsl(40, 84%, 53%);
+  box-shadow: 0 0.5em hsl(39, 89%, 49%), inset 0 0.4em hsl(217, 16%, 80%);
+}
+
+.right {
+  transform: translateX(170px) translateY(-140px);
+}
+
+.left {
+  transform: translateX(-170px) translateY(-140px);
+}
+
+.center {
+  transform: rotate(0deg) translateY(140px);
+}
+
+.weapon-kind {
+  width: 5em;
+}

@@ -1,0 +1,38 @@
+.score_header {
+  border: solid 3px hsl(217, 16%, 45%);
+  border-radius: 1rem;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.score_h1 {
+  color: white;
+  max-width: 10rem;
+  margin: 0;
+  font-size: 3.8em;
+  line-height: 0.8em;
+}
+
+.player_score {
+  padding: 0.5em 3.5em;
+  border-radius: 0.6rem;
+  background-color: white;
+  text-align: center;
+  letter-spacing: 0.15em;
+  line-height: 3.3em;
+}
+
+.player_score_title {
+  margin: 0;
+  color: hsl(229, 64%, 46%);
+}
+
+.player_score_live {
+  color: hsl(229, 25%, 31%);
+  font-size: 5em;
+  font-weight: 700;
+  margin: 0;
+}

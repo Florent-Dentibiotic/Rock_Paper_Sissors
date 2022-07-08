@@ -1,0 +1,15 @@
+.hands {
+  padding-top: 2em;
+  max-width: 1366px;
+  min-height: 30em;
+  margin: 2em auto;
+  position: relative;
+  gap: 10px;
+}
+
+.triangle {
+  position: absolute;
+  right: 50%;
+  top: 30%;
+  transform: translateX(55%) scale(130%);
+}

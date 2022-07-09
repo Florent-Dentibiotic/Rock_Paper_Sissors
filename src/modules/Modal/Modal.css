@@ -1,7 +1,7 @@
 .modal-bg {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: -2em;
+  left: -2em;
   padding: 0;
   margin: 0;
   min-height: 100vh;
@@ -9,6 +9,7 @@
   background-color: rgba(117, 190, 218, 0.5);
   display: grid;
   place-content: center;
+  box-sizing: content-box;
 }
 
 .modal-rules-bg {

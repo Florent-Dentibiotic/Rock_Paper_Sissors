@@ -44,6 +44,7 @@
   height: 16em;
   background-color: hsl(237, 49%, 15%);
   border-radius: 100%;
+  transform: translateY(-40px);
 }
 
 .hands-results-container {
@@ -135,7 +136,8 @@
   .house-unselected {
     width: 4em;
     height: 4em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    transform: translateY(0px);
   }
 
   .hands-results-container {

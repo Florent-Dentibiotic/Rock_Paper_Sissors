@@ -111,30 +111,25 @@ export default function Hands({ score, setScore }: HandsProps) {
       <main className={`hands-selected ${!scoreView ? 'onload' : 'results'}`}>
         <article className="hands-selected-article">
           <h3 className="hands-selected-title">YOU PICKED</h3>
-          <Weapon
-            weapon={playerChoice}
-            position={'weapon-selected'}
-            handleClick={handlePlayerChoice}
-          />
+          <Weapon weapon={playerChoice} position={'weapon-selected'} />
         </article>
-        {scoreView ? (
-          <article className="hands-selected-score">
-            <h3 className="hands-selected-score-title">
-              {winner === 'player' ? 'YOU WIN' : winner === 'tie' ? 'TIE' : 'YOU LOSE'}
-            </h3>
-            <button className="hands-selected-score-button" onClick={handleReset}>
-              PLAY AGAIN
-            </button>
-          </article>
-        ) : null}
+        <div className="hands-results-container">
+          {scoreView ? (
+            <article className="hands-selected-score">
+              <h3 className="hands-selected-score-title">
+                {winner === 'player' ? 'YOU WIN' : winner === 'tie' ? 'TIE' : 'YOU LOSE'}
+              </h3>
+              <button className="hands-selected-score-button" onClick={handleReset}>
+                PLAY AGAIN
+              </button>
+            </article>
+          ) : null}
+        </div>
+
         <article className="hands-selected-article">
           <h3 className="hands-selected-title">THE HOUSE PICKED</h3>
           {houseChoice.name ? (
-            <Weapon
-              weapon={houseChoice}
-              position={'weapon-selected'}
-              handleClick={handlePlayerChoice}
-            />
+            <Weapon weapon={houseChoice} position={'weapon-selected'} />
           ) : (
             <div className="house-unselected"></div>
           )}

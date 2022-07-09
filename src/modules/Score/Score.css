@@ -15,6 +15,7 @@
   font-size: 3.8em;
   line-height: 0.8em;
 }
+
 .score_h1_bonus {
   color: white;
   max-width: 10rem;
@@ -30,6 +31,7 @@
   text-align: center;
   letter-spacing: 0.15em;
   line-height: 3.3em;
+  min-width: 7em;
 }
 
 .player_score_title {
@@ -42,4 +44,31 @@
   font-size: 5em;
   font-weight: 700;
   margin: 0;
+}
+
+@media (max-width: 576px) {
+  .score_h1 {
+    max-width: 10rem;
+    font-size: 2em;
+  }
+
+  .player_score {
+    padding: 0.5em 1.5em;
+    line-height: normal;
+    min-width: 1em;
+  }
+
+  .player_score_title {
+    font-size: 1em;
+  }
+
+  .player_score_live {
+    font-size: 2em;
+  }
+
+  .score_h1_bonus {
+    max-width: 1rem;
+    margin: 0;
+    font-size: 1.2em;
+  }
 }

@@ -8,18 +8,25 @@ interface WeaponProps {
     border: string
     placeContent: string
   }
+  bonus?: string
   position: string
-  handleClick: (e: handleClickProps) => void
+  handleClick?: (e: handleClickProps) => void
 }
 
-export default function Weapon({ weapon, position, handleClick }: WeaponProps) {
+export default function Weapon({ weapon, bonus, position, handleClick }: WeaponProps) {
   return (
-    <div className={` ${position}`}>
-      <div
-        className={`${weapon.border} ${weapon.placeContent} weapon`}
-        onClick={() => handleClick(weapon)}
-      >
-        <img src={weapon.img} alt="" className={`${'weapon-kind'}`} />
+    <div
+      className={`${position}`}
+      onClick={
+        handleClick
+          ? () => handleClick(weapon)
+          : () => {
+              return
+            }
+      }
+    >
+      <div className={`${weapon.border} ${weapon.placeContent} weapon`}>
+        <img src={weapon.img} alt="" className={`${bonus} weapon-kind`} />
       </div>
     </div>
   )

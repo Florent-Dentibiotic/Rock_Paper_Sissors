@@ -128,28 +128,31 @@ export default function Bonus({ score, setScore }: HandsProps) {
         <article className="hands-selected-article">
           <h3 className="hands-selected-title">YOU PICKED</h3>
           <Weapon
+            bonus="weapon-bonus"
             weapon={playerChoice}
             position={'weapon-selected'}
-            handleClick={handlePlayerChoice}
           />
         </article>
-        {scoreView ? (
-          <article className="hands-selected-score">
-            <h3 className="hands-selected-score-title">
-              {winner === 'player' ? 'YOU WIN' : winner === 'tie' ? 'TIE' : 'YOU LOSE'}
-            </h3>
-            <button className="hands-selected-score-button" onClick={handleReset}>
-              PLAY AGAIN
-            </button>
-          </article>
-        ) : null}
+        <div className="hands-results-container">
+          {scoreView ? (
+            <article className="hands-selected-score">
+              <h3 className="hands-selected-score-title">
+                {winner === 'player' ? 'YOU WIN' : winner === 'tie' ? 'TIE' : 'YOU LOSE'}
+              </h3>
+              <button className="hands-selected-score-button" onClick={handleReset}>
+                PLAY AGAIN
+              </button>
+            </article>
+          ) : null}
+        </div>
+
         <article className="hands-selected-article">
           <h3 className="hands-selected-title">THE HOUSE PICKED</h3>
           {houseChoice.name ? (
             <Weapon
+              bonus="weapon-bonus"
               weapon={houseChoice}
               position={'weapon-selected'}
-              handleClick={handlePlayerChoice}
             />
           ) : (
             <div className="house-unselected"></div>
@@ -162,26 +165,31 @@ export default function Bonus({ score, setScore }: HandsProps) {
     <main className="bonus">
       <img src={Pentagon} alt="" className="pentagon" />
       <Weapon
+        bonus="weapon-bonus"
         weapon={weapons.Paper}
         position={'absolute'}
         handleClick={handlePlayerChoice}
       />
       <Weapon
+        bonus="weapon-bonus"
         weapon={weapons.Scissors}
         position={'absolute'}
         handleClick={handlePlayerChoice}
       />
       <Weapon
+        bonus="weapon-bonus"
         weapon={weapons.Rock}
         position={'absolute'}
         handleClick={handlePlayerChoice}
       />
       <Weapon
+        bonus="weapon-bonus"
         weapon={weapons.Spock}
         position={'absolute'}
         handleClick={handlePlayerChoice}
       />
       <Weapon
+        bonus="weapon-bonus"
         weapon={weapons.Lizard}
         position={'absolute'}
         handleClick={handlePlayerChoice}

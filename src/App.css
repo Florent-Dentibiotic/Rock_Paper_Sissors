@@ -3,3 +3,9 @@
   margin: auto;
   padding: 2em;
 }
+
+@media (max-width: 768px) {
+  .gamearea {
+    padding: 0.5em;
+  }
+}

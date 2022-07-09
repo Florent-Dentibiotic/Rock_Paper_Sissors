@@ -10,8 +10,6 @@
   padding: 2em;
   background-color: aliceblue;
   border-radius: 100%;
-  width: 8em;
-  height: 8em;
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -19,8 +17,6 @@
 
 .weapon:hover {
   opacity: 95%;
-  width: 8.2em;
-  height: 8.2em;
 }
 
 .red {
@@ -54,19 +50,26 @@ hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
 
 /* NORMAL POSITION RULES */
 .right {
+  width: 8em;
+  height: 8em;
   transform: translateX(170px) translateY(-140px);
 }
 
 .left {
+  width: 8em;
+  height: 8em;
   transform: translateX(-170px) translateY(-140px);
 }
 
 .center {
+  width: 8em;
+  height: 8em;
   transform: translateY(140px);
 }
 
 .weapon-kind {
   width: 5em;
+  height: 5em;
 }
 
 .weapon-selected {
@@ -76,21 +79,105 @@ hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
 /* BONUS POSITION RULES */
 
 .top {
+  width: 8em;
+  height: 8em;
   transform: translateY(-160px);
 }
 
 .top-left {
+  width: 8em;
+  height: 8em;
   transform: translateX(-230px) translateY(-10px);
 }
 
 .top-right {
+  width: 8em;
+  height: 8em;
   transform: translateX(230px) translateY(-10px);
 }
 
 .bottom-left {
+  width: 8em;
+  height: 8em;
   transform: translateX(-150px) translateY(250px);
 }
 
 .bottom-right {
+  width: 8em;
+  height: 8em;
   transform: translateX(150px) translateY(250px);
+}
+
+@media (max-width: 768px) {
+  .absolute {
+    top: 20%;
+    transform: translateX(6.5em);
+  }
+  .weapon {
+    padding: 1.5em;
+    border-radius: 100%;
+    border-width: 0.6em;
+  }
+
+  /* NORMAL POSITION RULES */
+  .right {
+    width: 2.7em;
+    height: 2.7em;
+    transform: translateX(55px) translateY(-50px);
+  }
+
+  .left {
+    width: 2.7em;
+    height: 2.7em;
+    transform: translateX(-145px) translateY(-50px);
+  }
+
+  .center {
+    width: 2.7em;
+    height: 2.7em;
+    transform: translateX(-50px) translateY(140px);
+  }
+  .weapon-kind {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  .weapon-selected {
+    transform: scale(80%);
+  }
+
+  /* BONUS POSITION RULES */
+  .top {
+    width: 2em;
+    height: 2em;
+    transform: translateX(-50px) translateY(-65px);
+  }
+
+  .top-left {
+    width: 2em;
+    height: 2em;
+    transform: translateX(-175px) translateY(20px);
+  }
+
+  .top-right {
+    width: 2em;
+    height: 2em;
+    transform: translateX(65px) translateY(20px);
+  }
+
+  .bottom-left {
+    width: 2em;
+    height: 2em;
+    transform: translateX(-135px) translateY(170px);
+  }
+
+  .bottom-right {
+    width: 2em;
+    height: 2em;
+    transform: translateX(10px) translateY(170px);
+  }
+
+  .weapon-bonus {
+    width: 2em;
+    height: 2em;
+  }
 }

@@ -18,5 +18,25 @@
   min-height: 40em;
   margin: 2em auto;
   position: relative;
-  display: grid;
+  display: flex;
+  justify-content: center;
+  gap: 6em;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .pentagon {
+    top: 10%;
+    transform: translateX(50%) scale(80%);
+  }
+  .bonus {
+    padding-top: 0em;
+    min-height: 25em;
+  }
+  .bonus-selected {
+    min-height: 29em;
+    padding-top: 0;
+    margin: auto;
+    gap: 1em;
+  }
 }

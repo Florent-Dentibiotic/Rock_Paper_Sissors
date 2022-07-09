@@ -42,7 +42,7 @@
   .modal-bg {
     background-color: white;
     bottom: -1em;
-    left: -1em;
+    left: 0em;
   }
 
   .modal-rules-bg {

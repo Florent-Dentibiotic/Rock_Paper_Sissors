@@ -41,5 +41,11 @@
 @media (max-width: 768px) {
   .modal-bg {
     background-color: white;
+    bottom: -1em;
+    left: -1em;
+  }
+
+  .modal-rules-bg {
+    padding: 1em;
   }
 }

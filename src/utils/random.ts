@@ -1,3 +1,3 @@
-export function getRandomInt() {
-  return Math.floor(Math.random() * 3)
+export function getRandomInt(max: number) {
+  return Math.floor(Math.random() * max)
 }

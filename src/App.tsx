@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="gamearea">
-      <Score score={score} />
+      <Score score={game === 'normal' ? score : scoreBonus} game={game} />
       {game === 'normal' ? (
         <Hands score={score} setScore={setScore} />
       ) : (

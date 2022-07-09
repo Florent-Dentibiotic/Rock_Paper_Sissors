@@ -73,7 +73,7 @@ export default function Hands({ score, setScore }: HandsProps) {
   }
 
   const handleHouseChoice = () => {
-    const house = weapons[Object.keys(weapons)[getRandomInt()]]
+    const house = weapons[Object.keys(weapons)[getRandomInt(3)]]
     setHouseChoice({
       name: house.name,
       img: house.img,

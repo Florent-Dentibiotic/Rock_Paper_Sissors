@@ -4,7 +4,7 @@
   left: 0;
   padding: 0;
   margin: 0;
-  min-height: 150vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: rgba(117, 190, 218, 0.5);
   display: grid;

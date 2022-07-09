@@ -85,7 +85,7 @@ export default function Bonus({ score, setScore }: HandsProps) {
       placeContent: 'middle',
       border: e.border,
     })
-    setTimeout(() => handleHouseChoice(), 650)
+    setTimeout(() => handleHouseChoice(), 300)
   }
 
   const handleHouseChoice = () => {
@@ -102,7 +102,7 @@ export default function Bonus({ score, setScore }: HandsProps) {
     if (houseChoice.name) {
       if (houseChoice.name === playerChoice.name) {
         setWinner('tie')
-        setTimeout(() => setScoreView(true), 650)
+        setTimeout(() => setScoreView(true), 300)
         return
       }
       solution[playerChoice.name].includes(houseChoice.name)
@@ -112,7 +112,7 @@ export default function Bonus({ score, setScore }: HandsProps) {
         : (setWinner('house'),
           setScore(score - 1),
           localStorage.setItem('bonusScore', (score - 1).toString()))
-      setTimeout(() => setScoreView(true), 650)
+      setTimeout(() => setScoreView(true), 300)
     }
   }, [houseChoice])
 

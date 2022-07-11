@@ -1,7 +1,7 @@
 .modal-bg {
   position: absolute;
-  bottom: -2em;
-  left: -2em;
+  bottom: 0;
+  left: 0;
   padding: 0;
   margin: 0;
   min-height: 100vh;

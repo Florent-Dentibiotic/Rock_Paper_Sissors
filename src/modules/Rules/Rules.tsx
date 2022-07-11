@@ -16,19 +16,21 @@ export default function Rules({ game, setGame }: RulesProps) {
   }
 
   return (
-    <footer className="footer">
-      <button onClick={setGame} className="footer-button">
-        {game === 'normal' ? 'BONUS' : 'NORMAL'}
-      </button>
+    <>
       {showModal ? (
         <Modal
           rules={game === 'normal' ? normalRules : bonusRules}
           closeModal={() => setShowModal(false)}
         />
       ) : null}
-      <button onClick={handleShowModal} className="footer-button">
-        RULES
-      </button>
-    </footer>
+      <footer className="footer">
+        <button onClick={setGame} className="footer-button">
+          {game === 'normal' ? 'BONUS' : 'NORMAL'}
+        </button>
+        <button onClick={handleShowModal} className="footer-button">
+          RULES
+        </button>
+      </footer>
+    </>
   )
 }

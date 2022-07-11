@@ -17,12 +17,6 @@ export default function Rules({ game, setGame }: RulesProps) {
 
   return (
     <>
-      {showModal ? (
-        <Modal
-          rules={game === 'normal' ? normalRules : bonusRules}
-          closeModal={() => setShowModal(false)}
-        />
-      ) : null}
       <footer className="footer">
         <button onClick={setGame} className="footer-button">
           {game === 'normal' ? 'BONUS' : 'NORMAL'}
@@ -31,6 +25,12 @@ export default function Rules({ game, setGame }: RulesProps) {
           RULES
         </button>
       </footer>
+      {showModal ? (
+        <Modal
+          rules={game === 'normal' ? normalRules : bonusRules}
+          closeModal={() => setShowModal(false)}
+        />
+      ) : null}
     </>
   )
 }
